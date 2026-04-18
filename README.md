@@ -20,6 +20,7 @@ A beginner-friendly chatbot that helps with coding questions in Python, Java, C+
 3. Connect your GitHub repository `codehelperai`.
 4. Set the root directory to the project root (not `public`).
 5. Deploy.
+6. Make sure `vercel.json` is present in the repo so Vercel knows to serve `public` and the `/api/chat` function.
 
 ### Vercel Environment Variable
 1. In your Vercel project dashboard, go to Settings > Environment Variables.
