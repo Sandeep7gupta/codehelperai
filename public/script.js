@@ -14,7 +14,7 @@ function sendMessage() {
     addMessage('CodeHelper AI is thinking...', 'loading');
 
     // Send to server
-    fetch('/chat', {
+    fetch('https://codehelperai.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userInput })
