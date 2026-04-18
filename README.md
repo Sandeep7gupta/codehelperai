@@ -14,27 +14,30 @@ A beginner-friendly chatbot that helps with coding questions in Python, Java, C+
 
 ## Deployment
 
-### Frontend (Vercel - Free)
+### Full App on Vercel (No card needed)
 1. Go to vercel.com, sign up/login.
 2. Click "New Project".
-3. Drag and drop the `public` folder (or connect GitHub repo).
-4. Deploy. Get the frontend URL (e.g., codehelperai.vercel.app).
+3. Connect your GitHub repository `codehelperai`.
+4. Set the root directory to the project root (not `public`).
+5. Deploy.
 
-### Backend (Render - Free)
-1. Push this project to GitHub:
-   - Create a new repo on github.com.
-   - Run: `git remote add origin https://github.com/yourusername/codehelperai.git`
-   - Run: `git push -u origin master`
-2. Go to render.com, sign up/login.
-3. Click "New Web Service" > "Connect GitHub" > Select your repo.
-4. Set build command: `npm install`
-5. Set start command: `node server.js`
-6. Add environment variable: `OPENAI_API_KEY` = your key.
-7. Deploy. Get the backend URL (e.g., codehelperai.onrender.com).
+### Vercel Environment Variable
+1. In your Vercel project dashboard, go to Settings > Environment Variables.
+2. Add:
+   - `OPENAI_API_KEY` as the name
+   - your OpenAI API key as the value
+3. Save and redeploy the project.
 
-### Connect Frontend to Backend
-- In `public/script.js`, change `fetch('/chat', ...)` to `fetch('https://your-backend-url.onrender.com/chat', ...)`.
-- Redeploy the frontend on Vercel.
+### How it works
+- `public/index.html` is your website.
+- `api/chat.js` is the backend API running on Vercel.
+- `public/script.js` sends chat messages to `/api/chat`.
+
+### Local testing
+1. Run `npm install`.
+2. Set `OPENAI_API_KEY` in your terminal or a `.env` file.
+3. Run `node server.js`.
+4. Open http://localhost:3000.
 
 ## Features
 

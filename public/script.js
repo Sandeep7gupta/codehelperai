@@ -13,8 +13,8 @@ function sendMessage() {
     // Add loading
     addMessage('CodeHelper AI is thinking...', 'loading');
 
-    // Send to server
-    fetch('https://codehelperai.onrender.com/chat', {
+    // Send to serverless function on Vercel
+    fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userInput })
